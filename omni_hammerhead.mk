@@ -43,3 +43,5 @@ PRODUCT_MANUFACTURER := LGE
 # Define kernel config for inline building
 TARGET_KERNEL_CONFIG := sabermod_hammerhead_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
+
+$(call inherit-product, vendor/lge/hammerhead/hammerhead-vendor.mk)
