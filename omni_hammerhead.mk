@@ -23,6 +23,11 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Some common sabermod variables before common
+
+O3_OPTIMIZATIONS := true
+TARGET_SM_KERNEL := 4.9
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
@@ -35,10 +40,6 @@ PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
 
-# Kernel inline build
+# Define kernel config for inline building
+TARGET_KERNEL_CONFIG := sabermod_hammerhead_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
-TARGET_KERNEL_CONFIG := custom_hammerhead_defconfig
-TARGET_VARIANT_CONFIG := custom_hammerhead_defconfig
-TARGET_SELINUX_CONFIG := custom_hammerhead_defconfig
-
-$(call inherit-product-if-exists, vendor/lge/hammerhead/device-vendor.mk)
