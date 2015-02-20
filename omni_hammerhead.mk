@@ -27,6 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 O3_OPTIMIZATIONS := true
 TARGET_SM_KERNEL := 4.9
+ENABLE_ARM_THUMB_INTERWORK := true
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
